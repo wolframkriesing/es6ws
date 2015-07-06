@@ -1,4 +1,4 @@
-export class KataGroups extends React.Component {
+class KataGroupsXXX extends React.Component {
   render() {
     return <div id="layout" className="content pure-g">
       <div id="nav" className="pure-u">
@@ -7,11 +7,12 @@ export class KataGroups extends React.Component {
         <div className="nav-inner">
           <div className="pure-menu">
             <ul className="pure-menu-list">
-              <li className="pure-menu-heading">Kata groups yyy</li>
-                {Object.keys(this.props.groups).map(groupName => <li className="pure-menu-item">
-                  <a href="#" className="pure-menu-link">{groupName}
-                    <span className="email-count"> ({this.props.groups[groupName].items.length})</span></a>
-                    </li>)}
+              <li className="pure-menu-heading">Kata groups</li>
+              <li className="pure-menu-item">
+              </li>
+              {this.props.groupNames.map(groupName => <li className="pure-menu-item">
+                <a href="#" className="pure-menu-link">{groupName}  <span className="email-count">(2)</span></a>
+              </li>)}
             </ul>
           </div>
         </div>

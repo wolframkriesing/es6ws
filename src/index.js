@@ -6,8 +6,8 @@ class HomePage extends React.Component {
 
   render() {
     const {groups} = this.props;
-    const groupNames = Object.keys(groups);
-    return <KataGroups groupNames={groupNames} />
+    //const groupNames = Object.keys(groups);
+    return <KataGroups groups={groups} />
   }
 }
 
