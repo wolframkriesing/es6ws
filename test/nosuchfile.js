@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {loadRemoteFile} from '../src/loadRemoteFile';
+import {Loader} from './Loader.js';
 
 describe('file contains valid data', function() {
   const location = 'http://katas.tddbin.com/katas/es6/language';
@@ -8,7 +8,7 @@ describe('file contains valid data', function() {
     const jsonfile = '__grouped__.json';
     const jsonurl = `${location}/${jsonfile}`;
 
-    loadRemoteFile(jsonurl, function(err, result) {
+    Loader.loadRemoteFile(jsonurl, function(err, result) {
       assert.equal(null, err);
       assert.equal('groups' in result, true);
       done();
@@ -19,7 +19,7 @@ describe('file contains valid data', function() {
     const jsonfile = '__all__.json';
     const jsonurl = `${location}/${jsonfile}`;
 
-    loadRemoteFile(jsonurl, function(err, result) {
+    Loader.loadRemoteFile(jsonurl, function(err, result) {
       assert.equal(null, err);
       assert.equal('groups' in result, false);
       done();

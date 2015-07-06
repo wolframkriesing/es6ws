@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "browser": {
+    "react": "./src/shim/react.js"
+  },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "mocha --compilers js:babel-core/register",
+
+    "build:watch": "chokidar 'src' -c 'npm run build'",
+    "build": "mkdir -p dist; npm run build:html; npm run build:js; npm run build2:js",
+    "build:html": "cp src/index.html dist/index.html",
+    "build:js": "browserify src/index.js --outfile=dist/index.max.js --transform=babelify",
+    "build2:js": "cp src/Loader.js dist",
+    "postbuild": "uglifyjs dist/index.max.js -m -c > dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +28,14 @@
   "homepage": "https://github.com/ChristophMathis/es6ws#readme",
   "devDependencies": {
     "babel-core": "^5.6.15",
-    "mocha": "^2.2.5"
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "chokidar": "^1.0.3",
+    "chokidar-cli": "^0.3.0",
+    "mocha": "^2.2.5",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
   }
 }
