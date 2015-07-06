@@ -1,23 +1,13 @@
 import React from 'react';
 import {Loader} from './Loader.js';
+import {KataGroups} from './KataGroups.js';
 
 class HomePage extends React.Component {
 
   render() {
     const {groups} = this.props;
     const groupNames = Object.keys(groups);
-    const groupCount = Object.keys(groups);
-    return (
-      <ul>
-        {groupNames.map(name => <KataGroup name={name} count={groups[name].items.length} />) }
-      </ul> );
-  }
-}
-
-class KataGroup extends React.Component {
-  render() {
-    const {name, count} = this.props;
-    return <li>{name} ({count})</li>
+    return <KataGroups groupNames={groupNames} />
   }
 }
 

@@ -10,10 +10,10 @@
     "test": "mocha --compilers js:babel-core/register",
 
     "build:watch": "chokidar 'src' -c 'npm run build'",
-    "build": "mkdir -p dist; npm run build:html; npm run build:js; npm run build2:js",
+    "build": "mkdir -p dist; npm run build:html; npm run build:js; npm run build:vendor",
     "build:html": "cp src/index.html dist/index.html",
     "build:js": "browserify src/index.js --outfile=dist/index.max.js --transform=babelify",
-    "build2:js": "cp src/Loader.js dist",
+    "build:vendor": "cp -a vendor/css dist; cp -a vendor/img dist",
     "postbuild": "uglifyjs dist/index.max.js -m -c > dist/index.js"
   },
   "repository": {
