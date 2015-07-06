@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ChristophMathis/es6ws/issues"
   },
-  "homepage": "https://github.com/ChristophMathis/es6ws#readme"
+  "homepage": "https://github.com/ChristophMathis/es6ws#readme",
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
 }
