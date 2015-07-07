@@ -9,7 +9,7 @@ export class Loader {
     const request = http.request(options, function(res) {
       res.on('data', function(chunk) {data += chunk;});
       res.on('end', function() {
-        onLoaded(null, JSON.parse(data));
+        onLoaded(null, data);
       });
     });
     request.on('error', function(e) { onLoaded(e); });
