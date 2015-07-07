@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Loader} from './Loader.js';
+import {Loader} from '../src/Loader.js';
 
 describe('file contains valid data', function() {
   const location = 'http://katas.tddbin.com/katas/es6/language';
