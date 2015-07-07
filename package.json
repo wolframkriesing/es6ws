@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-
     "build:watch": "chokidar 'src' -c 'npm run build'",
     "build": "mkdir -p dist; npm run build:html; npm run build:js; npm run build:vendor",
     "build:html": "cp src/index.html dist/index.html",
@@ -33,7 +32,8 @@
     "chokidar": "^1.0.3",
     "chokidar-cli": "^0.3.0",
     "mocha": "^2.2.5",
-    "uglifyjs": "^2.4.10"
+    "uglifyjs": "^2.4.10",
+    "sinon": "^1.15.4"
   },
   "dependencies": {
     "react": "^0.13.3"
